@@ -1,12 +1,19 @@
 const express = require('express');
 const app = express();
 
+// Set the view engine to EJS
+app.set('view engine', 'ejs');
+
+// Route for the homepage
 app.get('/', (req, res) => {
-  res.send('Hello There!');
+  res.render('home', { RESTAURANT });
 });
 
-app.listen(3000);
+// ... other routes ...
 
+app.listen(3000, () => {
+  console.log('Server is listening on port 3000');
+});
 
 const RESTAURANT = {
     name: 'The Green Byte Bistro',
