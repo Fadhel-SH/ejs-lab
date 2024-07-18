@@ -7,6 +7,7 @@
 </head>
 <body>
   <h1><%= RESTAURANT.name %> Home Page</h1>
+  <%- include('./partials/nav') %>
   <p>Address: <%= RESTAURANT.address %></p>
   <p>Phone: <%= RESTAURANT.phone %></p>
   <% if (RESTAURANT.isOpen) { %>

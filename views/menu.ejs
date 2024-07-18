@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+</head>
+<body>
+  <h1>Full Menu</h1>
+  <!-- menu items -->
+  <% menu.forEach(item => { %>
+    <h2><%= item.name %></h2>
+    <p>Price: $<%= item.price.toFixed(2) %></p>
+    <p>Rating: <%= item.rating %> stars</p>
+    <p>Details: <%= item.details %></p>
+  <% }); %>
+
+  <% let currentCategory = ''; %>
+<% menu.forEach(item => { %>
+  <% if (item.category !== currentCategory) { %>
+    <h2><%= item.category %></h2>
+    <% currentCategory = item.category; %>
+  <% } %>
+  <!-- menu item details -->
+<% }); %>
+
+</body>
+</html>

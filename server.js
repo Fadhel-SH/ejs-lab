@@ -63,3 +63,12 @@ const RESTAURANT = {
       }
     ]
   }
+
+  app.get('/menu', (req, res) => {
+    //'menu' array with menu items
+    const menu = [
+      // ... menu items here
+    ];
+    res.render('menu', { menu });
+  });
+  
