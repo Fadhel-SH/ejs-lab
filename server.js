@@ -71,4 +71,12 @@ const RESTAURANT = {
     ];
     res.render('menu', { menu });
   });
-  
+
+  app.get('/menu/:category', (req, res) => {
+    //  array with menu items
+    const category = req.params.category; // Extract the category from the URL
+    const filteredMenu = RESTAURANT.menu.filter(item => item.category === category);
+    res.render('category', { category, menuItems: filteredMenu });
+  });
+
+  const capitalizedCategory = category.charAt(0).toUpperCase() + category.slice(1);
